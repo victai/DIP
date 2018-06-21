@@ -1,0 +1,36 @@
+# DIP Homework Assignment #1
+# Submission: Mar 27, 2018
+# Name: Vic Tai
+# ID #: B04902105
+# email: b04902105@ntu.edu.tw
+# compiled on Ubuntu 16.04 with g++ -std=c++11
+
+CC=g++ -std=c++11
+LN=g++
+ALL: Warmup Prob1 Prob2
+Warmup:
+	@echo "Warmup"
+	@echo "compiling and linking the code"
+	$(CC) -c warmup.cpp
+	$(LN) -o warmup warmup.o
+	@echo "running the program, usage: ./warmup sample1 B"
+	./warmup raw/sample1.raw B.raw
+
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c P1.cpp
+	$(LN) -o P1 P1.o
+	@echo "running, usage: ./P1 sample2 D H L log inv_log power"
+	./P1 raw/sample2.raw D.raw H.raw L.raw log.raw inv_log.raw power.raw
+
+Prob2:
+	@echo "Prob2"
+	@echo "comiling and linking the code"
+	$(CC) -c P2.cpp
+	$(LN) -o P2 P2.o
+	@echo "running, usage: ./P2 sample3 sample4 G1 G2 S1 S2 RG RS wrinkle"
+	./P2 raw/sample3.raw raw/sample4.raw G1.raw G2.raw S1.raw S2.raw RG.raw RS.raw wrinkle.raw
+
+clean:
+	rm -f *.o *.raw *.data warmup P1 P2

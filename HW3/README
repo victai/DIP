@@ -1,0 +1,28 @@
+# DIP Homework Assignment #1
+# Submission: April 10, 2018
+# Name: Vic Tai
+# ID #: B04902105
+# email: b04902105@ntu.edu.tw
+# compiled on Ubuntu 16.04 with g++
+
+CC=g++ -std=c++11
+LN=g++ -std=c++11
+ALL: Prob1 Prob2
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c P1.cpp
+	$(LN) -o P1 P1.o
+	@echo "running, usage: ./P1 sample1 B S"
+	./P1 raw/sample1.raw B.raw S.raw
+
+Prob2:
+	@echo "Prob2"
+	@echo "comiling and linking the code"
+	$(CC) -c P2.cpp
+	$(LN) -o P2 P2.o
+	@echo "running, usage: ./P2 sample2 K EX"
+	./P2 raw/sample2.raw K.raw EX.raw
+
+clean:
+	rm -f *.o *.raw *.data P1 P2

@@ -1,0 +1,23 @@
+# DIP Homework Assignment #4
+# Submission: May 29, 2018
+# Name: Vic Tai
+# ID #: B04902105
+# email: b04902105@ntu.edu.tw
+# compiled on Ubuntu 16.04 with g++
+
+CC=g++
+LN=g++
+ALL: Prob1
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c P1.cpp
+	$(LN) -o P1 P1.o
+	@echo "running, usage: ./P1 TrainingSet TestingSet1"
+	./P1 raw/TrainingSet.raw raw/sample1.raw
+	@echo ""
+	@echo "running, usage: ./P1 TrainingSet TestingSet2"
+	./P1 raw/TrainingSet.raw raw/sample2.raw
+
+clean:
+	rm -f *.o P1
